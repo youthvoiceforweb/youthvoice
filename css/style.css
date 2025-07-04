@@ -25,12 +25,13 @@ body {
 header {
     background-color: var(--primary);
     color: white;
-    padding: 1rem 0;
     position: fixed;
     width: 100%;
     top: 0;
+    padding: 1rem 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: relative;
 }
 
 .header-container {
@@ -299,7 +300,6 @@ footer {
 }
 
 
-
 .tagging-bar {
   background-color: #212529; /* dark gray background */
   color: #ffffff;            /* white text */
@@ -324,9 +324,3 @@ footer {
     transform: translateX(-100%);
   }
 }
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: rgba(0, 0, 0, 0.5); /* dark background */
-  border-radius: 50%; /* optional: makes them round */
-}
-
