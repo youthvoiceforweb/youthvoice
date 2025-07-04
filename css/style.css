@@ -324,18 +324,12 @@ footer {
     transform: translateX(-100%);
   }
 }
-
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  background-color: rgba(0, 0, 0, 0.7); /* dark background */
-  border-radius: 50%;
-  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.5); /* dark background */
+  border-radius: 50%; /* optional: makes them round */
 }
 
-.carousel-control-prev:hover .carousel-control-prev-icon,
-.carousel-control-next:hover .carousel-control-next-icon {
-  background-color: rgba(0, 0, 0, 1); /* darker on hover */
-}
 
 
 
