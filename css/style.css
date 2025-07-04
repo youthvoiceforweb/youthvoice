@@ -292,6 +292,14 @@ footer {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
+.team-member img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
 .tagging-bar {
   background-color: #212529; /* dark gray background */
   color: #ffffff;            /* white text */
@@ -321,12 +329,4 @@ footer {
   background-color: rgba(0, 0, 0, 0.5); /* dark background */
   border-radius: 50%; /* optional: makes them round */
 }
-
-.team-member img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-
 
