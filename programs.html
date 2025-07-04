@@ -198,34 +198,27 @@
       </div>
     </section>
     <section class="py-5 bg-light">
-      <div class="container">
-        <h2 class="text-center mb-4">Activity Gallery</h2>
-        <div
-          id="activityCarousel"
-          class="carousel slide"
-          data-bs-ride="carousel"
-        >
-          <div class="carousel-inner" id="carouselImages"></div>
-
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#activityCarousel"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon"></span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#activityCarousel"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon"></span>
-          </button>
-        </div>
+  <div class="container">
+    <h2 class="text-center mb-4">Activity Gallery</h2>
+    <div id="activityCarousel" class="carousel slide" data-bs-ride="carousel">
+      <!-- Indicators -->
+      <div class="carousel-indicators">
+        <!-- These will be added dynamically by JavaScript -->
       </div>
-    </section>
+      
+      <div class="carousel-inner" id="carouselImages"></div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#activityCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#activityCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</section>
 
 
     <include src="common/footer.html"></include>
@@ -234,38 +227,58 @@
     <script src="js/main.js"></script>
     <script src="js/include.js"></script>
     <script>
-      const images = [
-        "Blood Donation Camp-YVF-16.03.2025.jpg",
-        "Distribution of Stationery Items  2024-07-15.jpeg",
-        "Distribution of Study Kits  2024-08-01 at 09.28.17.jpeg",
-        "Free Medical Camp 2024-07-28.jpeg",
-        "Free Medicine Distribute 2024-07-28.jpeg",
-        "General Meeting-04.07.2024.jpeg",
-        "Health Camp 2024-07-28.jpeg",
-        "Medical Camp  2024-07-18.jpeg",
-        "Medical Camp 2024-07-18.jpeg",
-        "Plantation 2024-07-12 .jpeg",
-        "Plantation of trees 2024-07-09.jpeg",
-        "Sanitary Pads Distribution -14.12.2024.jpeg",
-        "Sanitary Pads Distribution 2025-03-09.jpeg",
-        "Stationery Items Distribute 2024-08-01.jpeg",
-        "Study kit Distribution  2024-08-01 at 08.33.54.jpeg",
-        "Study Kit Distribution 2024-07-26.jpeg",
-        "Study Kit Distribution.  2024-07-26.jpeg",
-        "YVF-Blood Donation-16.03.2025.jpeg",
-        "YVF-Blood Donation-Pic-1.jpeg",
-        "YVF-Blood Donation-Pic-2.jpeg",
-        "YVF-Blood-Donation Camp-16.03.2025.jpeg",
-      ];
+  const images = [
+    "Blood Donation Camp-YVF-16.03.2025.jpg",
+    "Distribution of Stationery Items  2024-07-15.jpeg",
+    "Distribution of Study Kits  2024-08-01 at 09.28.17.jpeg",
+    "Free Medical Camp 2024-07-28.jpeg",
+    "Free Medicine Distribute 2024-07-28.jpeg",
+    "General Meeting-04.07.2024.jpeg",
+    "Health Camp 2024-07-28.jpeg",
+    "Medical Camp  2024-07-18.jpeg",
+    "Medical Camp 2024-07-18.jpeg",
+    "Plantation 2024-07-12 .jpeg",
+    "Plantation of trees 2024-07-09.jpeg",
+    "Sanitary Pads Distribution -14.12.2024.jpeg",
+    "Sanitary Pads Distribution 2025-03-09.jpeg",
+    "Stationery Items Distribute 2024-08-01.jpeg",
+    "Study kit Distribution  2024-08-01 at 08.33.54.jpeg",
+    "Study Kit Distribution 2024-07-26.jpeg",
+    "Study Kit Distribution.  2024-07-26.jpeg",
+    "YVF-Blood Donation-16.03.2025.jpeg",
+    "YVF-Blood Donation-Pic-1.jpeg",
+    "YVF-Blood Donation-Pic-2.jpeg",
+    "YVF-Blood-Donation Camp-16.03.2025.jpeg",
+  ];
 
-      const carouselInner = document.getElementById("carouselImages");
+  const carouselInner = document.getElementById("carouselImages");
+  const carouselIndicators = document.querySelector(".carousel-indicators");
 
-      images.forEach((img, index) => {
-        const div = document.createElement("div");
-        div.className = "carousel-item" + (index === 0 ? " active" : "");
-        div.innerHTML = `<img src="images/activities/${img}" class="d-block w-100" alt="Activity Image">`;
-        carouselInner.appendChild(div);
-      });
-    </script>
+  images.forEach((img, index) => {
+    // Create carousel item
+    const div = document.createElement("div");
+    div.className = "carousel-item" + (index === 0 ? " active" : "");
+    
+    // Create image element
+    const imgElement = document.createElement("img");
+    imgElement.src = "images/activities/" + img;
+    imgElement.className = "d-block w-100 carousel-image";
+    imgElement.alt = "Activity Image";
+    
+    div.appendChild(imgElement);
+    carouselInner.appendChild(div);
+
+    // Create indicator
+    if (index === 0) {
+      carouselIndicators.innerHTML += `
+        <button type="button" data-bs-target="#activityCarousel" data-bs-slide-to="${index}" class="active" aria-current="true"></button>
+      `;
+    } else {
+      carouselIndicators.innerHTML += `
+        <button type="button" data-bs-target="#activityCarousel" data-bs-slide-to="${index}"></button>
+      `;
+    }
+  });
+</script>
   </body>
 </html>
