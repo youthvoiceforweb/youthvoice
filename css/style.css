@@ -331,6 +331,66 @@ footer {
     font-size: 1.2rem;
 }
 
+/* Carousel Styles */
+.carousel {
+  margin: 0 auto;
+  max-width: 1000px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.carousel-inner {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.carousel-image {
+  height: 500px;
+  object-fit: cover;
+}
+
+.carousel-indicators button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 5px;
+  background-color: rgba(255,255,255,0.5);
+  border: none;
+}
+
+.carousel-indicators .active {
+  background-color: var(--primary);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-control-prev {
+  left: 20px;
+}
+
+.carousel-control-next {
+  right: 20px;
+}
+
+@media (max-width: 768px) {
+  .carousel-image {
+    height: 350px;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-image {
+    height: 250px;
+  }
+}
+
 .copyright {
     text-align: center;
     margin-top: 2rem;
