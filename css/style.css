@@ -332,13 +332,15 @@ footer {
 }
 
 .cin-number {
-    font-size: 1rem; /* slightly larger */
-    font-weight: 600; /* semi-bold */
-    color: #FFD700; /* golden accent (optional) */
-    font-family: "Poppins", sans-serif; /* modern font */
-    letter-spacing: 0.5px; /* spacing for clean look */
+    font-size: 0.9rem;
+    font-weight: 600; /* Semi-bold */
+    color: #FFD700; /* Golden Accent */
+    font-family: "Poppins", sans-serif; /* Modern clean font */
+    letter-spacing: 0.5px;
     margin-top: 5px;
+    text-align: center;
 }
+
 
 
 
