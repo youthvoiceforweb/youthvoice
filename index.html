@@ -27,19 +27,26 @@
     min-height: 400px;
     background-size: cover;
     background-position: center;
+
+    /* Center content using flexbox */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .overlay::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5); /* Adjust opacity here */
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
     z-index: 1;
 }
 
 .carousel-caption {
     position: relative;
-    z-index: 2; /* Make sure caption appears above the overlay */
+    z-index: 2; /* Bring text above overlay */
+    color: #fff;
 }
 
 @media (max-width: 768px) {
@@ -51,6 +58,7 @@
     }
 }
 
+
     </style>
 </head>
 
@@ -59,11 +67,9 @@
     <include src="common/header.html"></include>
 
     <!-- Hero Banner with Carousel -->
-    <!-- Hero Banner with Carousel -->
-<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <!-- Add overlay container -->
             <div class="overlay" style="background-image: url('images/s1.jpeg');">
                 <div class="carousel-caption text-center text-light">
                     <h2>Youth Voice Foundation</h2>
@@ -94,6 +100,17 @@
             </div>
         </div>
     </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
 
     <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
