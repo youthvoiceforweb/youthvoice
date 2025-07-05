@@ -20,6 +20,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+     <style>
+        .carousel-item {
+            height: 90vh;
+            min-height: 400px;
+            background: no-repeat center center scroll;
+            background-size: cover;
+            position: relative;
+        }
+
+        .carousel-caption {
+            bottom: 20%;
+        }
+
+        @media (max-width: 768px) {
+            .carousel-caption h1 {
+                font-size: 1.8rem;
+            }
+
+            .carousel-caption p {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -28,14 +51,44 @@
 
 
     <!-- Hero Banner -->
-    <section class="hero" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero.jpg');">
-        <div class="container">
-          <h2>Youth Voice Foundation</h2>
-          <h1>Empowering Communities Through Sustainable Development</h1>
-          <p>Promoting socio-economic growth through government policies and CSR initiatives</p>
-          <a href="programs.html" class="btn">Explore Our Programs</a>
+    <!-- Hero Banner with Carousel -->
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" style="background-image: url('images/hero1.jpg');">
+                <div class="carousel-caption text-center text-light">
+                    <h2>Youth Voice Foundation</h2>
+                    <h1>Empowering Communities Through Sustainable Development</h1>
+                    <p>Promoting socio-economic growth through government policies and CSR initiatives</p>
+                    <a href="programs.html" class="btn btn-primary">Explore Our Programs</a>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('images/hero2.jpg');">
+                <div class="carousel-caption text-center text-light">
+                    <h2>Skill Development & Training</h2>
+                    <h1>Building a Skilled Future</h1>
+                    <p>Helping youth and women achieve their potential through training initiatives</p>
+                    <a href="programs.html" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('images/hero3.jpg');">
+                <div class="carousel-caption text-center text-light">
+                    <h2>Environmental Sustainability</h2>
+                    <h1>Creating a Greener Tomorrow</h1>
+                    <p>Engaging communities in eco-friendly practices and conservation</p>
+                    <a href="programs.html" class="btn btn-primary">Join Us</a>
+                </div>
+            </div>
         </div>
-    </section>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
 
     <!-- Focus Areas / Verticals -->
     <section id="verticals" class="verticals">
