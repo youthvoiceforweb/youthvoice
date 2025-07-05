@@ -331,3 +331,11 @@ footer {
   border-radius: 50%; /* optional: makes them round */
 }
 
+.cin-number {
+    font-size: 0.85rem;
+    color: #f5f5f5; /* light color for dark background */
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+
